@@ -56,26 +56,29 @@ let currentQuery = Promise.resolve();
 
 
 
-var amenities = Object.keys(essentialAmenities)
-var url = Object.values(essentialAmenities)
+var essentialAmenities = Object.keys(essentialAmenities)
+var essentialUrl = Object.values(essentialAmenities)
+
+var specialAmenities = Object.keys(specialAmenities)
+var specialUrl = Object.values(specialAmenities)
 
 for (var i = 1; i < 101; i++) {
   var query = "INSERT INTO amenities (amenity, amenity_type, listing, amenity_url) VALUES (?, ?, ?, ?)"
-  for (var j = 0; j < amenities.length; j++) {
+  for (var j = 0; j < essentialAmenities.length; j++) {
     var params = [
-      amenities[j],
+      essentialAmenities[j],
       'essential',
       i,
-      url[j]
+      essentialUrl[j]
     ];
     dbSeeding(query, params)
   }
   for (var k = 0; k < (Math.floor(Math.random() * 6) + 8); k++) {
     params = [
-      amenities[k],
+      specialAmenities[k],
       'special',
       i,
-      url[k]
+      specialUrl[k]
     ];
     dbSeeding(query, params)
   }
