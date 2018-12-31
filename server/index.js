@@ -3,24 +3,17 @@ const bodyParser = require('body-parser');
 const db = require('../db');
 const path = require('path');
 const app = express();
-const port = 4001
+const port = 4002
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, './../public/dist')));
 
 app.get('/api/listing/:listingId/amenities', (req, res) => {
-  console.log('listing Id', req.params.listingId)
   const listingId = req.params.listingId;
-  db.getAmenities(listingId, (err, reviews) => {
-    if (err) {
-      res.send(err)
-    } else {
-      res.send(reviews)
-    }
+  db.getAmenities(listingId, (amenities) => {
+    res.send(amenities)
   });
 });
 
