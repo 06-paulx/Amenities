@@ -4,7 +4,7 @@ import Amenity from './Amenity.jsx'
 function Row1({amenities}){
   amenities = amenities.slice(0,6)
   return (
-    <div>Row 1
+    <div>
       {
         amenities.map((amenity, index) => 
           <Amenity value={amenity} key={index}/>

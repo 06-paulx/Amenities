@@ -1,6 +1,7 @@
 import React from 'react';
 import Row1 from './Row1.jsx';
-import Row2 from './Row2.jsx'
+import Row2 from './Row2.jsx';
+import AllAmenities from './AllAmenities.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,15 @@ class App extends React.Component {
       essential: [],
       special: []
     }
+  }
+
+  handleShowAll() {
+    document.getElementById('all_amenities').style.display = "block"
+    document.getElementById('amenities_container').style.display = "none"
+  } 
+  handleGoBack() {
+    document.getElementById('all_amenities').style.display = "none"
+    document.getElementById('amenities_container').style.display = "block"
   }
 
   componentDidMount() {
@@ -41,12 +51,19 @@ class App extends React.Component {
     console.log(this.state.special)
     console.log(this.state.essential)
     return (
-      <div>
-        <h1>Amenities</h1>
-        <Row1 amenities={this.state.special}/>
-        <Row2 amenities={this.state.essential}/>
-        <button>Show all {this.state.amenities.length} amenities</button>
-      </div>
+      <section>
+        <div id="amenities_container">
+          <h1>Amenities</h1>
+          <Row1 amenities={this.state.special}/>
+          <Row2 amenities={this.state.essential}/>
+          <button className="show_all" onClick={this.handleShowAll.bind(this)}>Show all {this.state.amenities.length} amenities</button>
+        </div>
+      <AllAmenities 
+        handleGoBack={this.handleGoBack.bind(this)}
+        essential={this.state.essential}
+        special={this.state.special}
+      />
+      </section>
     )
   }
 }

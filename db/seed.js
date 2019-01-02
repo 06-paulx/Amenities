@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
   database: 'Amenities',
 });
 
-var specialAmenities = {
+var specialAmenitiesObject = {
   'Self check-in': 'https://s3.amazonaws.com/amenities/self-check-in.png', 
   'Free parking on premises': 'https://s3.amazonaws.com/amenities/parking.png',
   'Free street parking': 'https://s3.amazonaws.com/amenities/parking.png',
@@ -24,12 +24,12 @@ var specialAmenities = {
   'Garden or backyard': 'https://s3.amazonaws.com/amenities/garden-backyard.png'
 }
 
-var essentialAmenities = {
+var essentialAmenitiesObject = {
   'Wifi': 'https://s3.amazonaws.com/amenities/wireless-internet.png',
   'TV': 'https://s3.amazonaws.com/amenities/tv.png',
   'Bathroom essentials': 'https://s3.amazonaws.com/amenities/essentials.png',
   'Bedroom comforts': 'https://s3.amazonaws.com/amenities/extra-pillows-blankets.png',
-  'Coffee maker': 'https: //s3.amazonaws.com/amenities/coffee-maker.png',
+  'Coffee maker': 'https://s3.amazonaws.com/amenities/coffee-maker.png',
   'Hair dryer': 'https://s3.amazonaws.com/amenities/hair-dryer.png',
   'Iron': 'https://s3.amazonaws.com/amenities/iron.png',
   'Carbon monoxide detector': 'https://s3.amazonaws.com/amenities/co2-detector.png',
@@ -56,11 +56,11 @@ let currentQuery = Promise.resolve();
 
 
 
-var essentialAmenities = Object.keys(essentialAmenities)
-var essentialUrl = Object.values(essentialAmenities)
+var essentialAmenities = Object.keys(essentialAmenitiesObject)
+var essentialUrl = Object.values(essentialAmenitiesObject)
 
-var specialAmenities = Object.keys(specialAmenities)
-var specialUrl = Object.values(specialAmenities)
+var specialAmenities = Object.keys(specialAmenitiesObject)
+var specialUrl = Object.values(specialAmenitiesObject)
 
 for (var i = 1; i < 101; i++) {
   var query = "INSERT INTO amenities (amenity, amenity_type, listing, amenity_url) VALUES (?, ?, ?, ?)"
