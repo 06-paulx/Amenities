@@ -2,11 +2,11 @@ import React from 'react';
 
 function Amenity({value}) {
   return (
-    <div className="amenity">
+    <div className="m-amenity">
     <div>
-      <img className="photo" src={value.amenity_url}></img>
+      <img className="m-photo" src={value.amenity_url}></img>
     </div>
-    <div className="amenity_text">
+    <div className="m-amenity_text">
       {value.amenity}
     </div>
     </div>

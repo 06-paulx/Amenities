@@ -56,7 +56,7 @@ class App extends React.Component {
           <h1>Amenities</h1>
           <Row1 amenities={this.state.special}/>
           <Row2 amenities={this.state.essential}/>
-          <button className="show_all" onClick={this.handleShowAll.bind(this)}>Show all {this.state.amenities.length} amenities</button>
+          <button className="m-show_all" onClick={this.handleShowAll.bind(this)}>Show all {this.state.amenities.length} amenities</button>
         </div>
       <AllAmenities 
         handleGoBack={this.handleGoBack.bind(this)}

@@ -14,7 +14,7 @@
   margin-left: 250px;
 }
 
-.amenity {
+.m-amenity {
   overflow: auto;
   border-radius: 5px;
   width: 156px;
@@ -34,7 +34,7 @@
   vertical-align: top;
 }
 
-.photo {
+.m-photo {
   mix-blend-mode: multiply;
   width: 90%;
   height: auto;
@@ -45,7 +45,7 @@
   display: none;
 }
 
-.main_list {
+.m-main_list {
   max-width: 50%;
   margin: auto;
   color: #484848;
@@ -75,19 +75,19 @@ hr {
   margin-bottom: 15px;
 }
 
-.list_photo {
+.m-list_photo {
   float: right;
   max-width: 65px;
   margin: auto;
   display: block;
 }
 
-.list_item {
+.m-list_item {
   padding-top: 40px;
   margin: auto;
 }
 
-.show_all {
+.m-show_all {
   font-family: var(--font-font_family, Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif) !important;
   font-size: 15px;
   font-weight: 800;
@@ -97,22 +97,22 @@ hr {
   color: #A62D55;
 }
 
-.amenity_text {
+.m-amenity_text {
   text-align: center;
 }
 
-.row {
+.m-row {
   padding-top: 16px;
 }
 
-.nav {
+.m-nav {
   height: 50px;
   width: 100%;
   position: relative;
   border-bottom: 1px solid gray
 }
 
-.back-button {
+.m-back-button {
   background: url(back.png) no-repeat;
   width:32px;
   height:32px;
