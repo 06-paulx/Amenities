@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/listing/' + this.props.id + '/amenities')
+    fetch('http://localhost:4002/' + this.props.id + '/amenities')
       .then((response) => {
         return response.json();
       })

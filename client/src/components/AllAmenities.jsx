@@ -4,8 +4,9 @@ import AmenityListItem from './AmenityItem.jsx';
 function AllAmenities({handleGoBack, essential, special}) {
   return (
     <div id="all_amenities">
-      <button onClick={handleGoBack}>goBack</button>
-      
+     <div className="nav">
+      <button className="back-button" onClick={handleGoBack}></button>
+     </div>
       <div className="main_list">
         <div>
           <h1>Special to this house</h1>
