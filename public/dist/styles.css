@@ -114,7 +114,7 @@ hr {
 }
 
 .m-back-button {
-  background: url(back.png) no-repeat;
+  background: url(https://s3.amazonaws.com/paul-x-logos/back.png) no-repeat;
   width:32px;
   height:32px;
   border-width: 0;
